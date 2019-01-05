@@ -15,11 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello', function (){
-    $user = [
-        'name' => 'quang',
-        'age' => 25,
-        'hometown' => 'ha noi'
-    ];
-    return view('hello',['test'=>$user]);
+use App\Category;
+Route::get('/list-cate', function (){
+    $cates = Category::all();
+    dd($cates);
 });
